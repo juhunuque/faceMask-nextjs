@@ -3,7 +3,7 @@ export default function Footer(){
         <footer className="footer">
             <p>
                 Para más información al &nbsp;
-                <a href="https://api.whatsapp.com/send?phone=+50688792526" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=+50683069880" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width={24} height={24}/>
                 </a>
                 <span className="footer__left">

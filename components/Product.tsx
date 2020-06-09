@@ -21,7 +21,7 @@ const Product = (props: IProductProps) => {
             <p className="product__description">{props.product.description}</p>
             <img src={props.product.image} alt="" className="product__image"/>
             <div className="product__price-button-container">
-                <div className="product__price">₡{props.product.price.toFixed(2)}</div>
+                <div className="product__price">Desde los ₡{props.product.price.toFixed(2)} en adelante</div>
             </div>
         </div>
     )
