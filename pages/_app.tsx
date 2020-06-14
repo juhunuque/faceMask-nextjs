@@ -1,8 +1,11 @@
+import React from "react";
 import Header from "../components/Header"
 import ProductList from "../components/ProductList"
 import { IProduct } from "../components/Product"
 import Footer from "../components/Footer"
 import Contact from "../components/Contact"
+import { DefaultSeo } from 'next-seo';
+import Head from 'next/head'
 
 import "../styles.scss"
 
@@ -13,6 +16,29 @@ interface IIndexProps {
 const Index = (props: IIndexProps) => {
     return (
         <div className="app">
+            <DefaultSeo
+                openGraph={{
+                    type: 'website',
+                    title: 'Entre hilos & agujas',
+                    images: [
+                        {
+                            url: 'https://entrehilosyagujas.com/img/products/faceMask_10.jpg',
+                            width: 800,
+                            height: 600,
+                        },
+                    ],
+                    locale: 'es_ES',
+                    url: 'https://mascarillas.entrehilosyagujas.com/',
+                    site_name: 'Entre hilos y agujas',
+                    description: 'Una exclusiva colección de mascarillas que siguen todos los lineamientos dados por el Ministerio de Salud.'
+                }}
+            />
+            <Head>
+                <title>Entre hilos & agujas</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta property="og:title" content="Entre hilos & agujas" key="title" />
+                <link rel="shortcut icon" href="/favicon.png" />
+            </Head>
             <Header />
             <main className="main">
                 <img src="/static/aquarium.svg" alt="a" className="background-image" />
