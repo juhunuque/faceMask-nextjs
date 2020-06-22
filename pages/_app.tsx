@@ -41,7 +41,6 @@ const Index = (props: IIndexProps) => {
             </Head>
             <Header />
             <main className="main">
-                <img src="/static/aquarium.svg" alt="a" className="background-image" />
                 <div className="promotional-message">
                     <h3>Entre Hilos & Agujas te trae</h3>
                     <h2>Mascarillas</h2>
