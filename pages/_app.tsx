@@ -6,6 +6,8 @@ import Footer from "../components/Footer"
 import Contact from "../components/Contact"
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head'
+import Router from "next/router";
+import withGA from "next-ga";
 
 import "../styles.scss"
 
@@ -66,5 +68,4 @@ Index.getInitialProps = async () => {
         ]
     }
 }
-
-export default Index
+export default withGA(process.env.NEXT_PUBLIC_GA_ID, Router)(Index);
