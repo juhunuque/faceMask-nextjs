@@ -321,3 +321,40 @@ html, body {
     padding-bottom: 20px;
   }
 }
+
+.wa-splmn-chat-btn-offset {
+  position: fixed;
+  width: 174px;
+  height: 45px;
+  bottom: 65px;
+  right: 20px;
+  z-index: 99999 !important;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px 0 #d3d3d3;
+  box-shadow: 0 0 5px 0 #d3d3d3;
+  display: table;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: #fff;
+  color: #9094FF;
+}
+
+.wa-chat-btn-fixed {
+  a {
+    text-decoration: none;
+    color: #9094FF;
+  }
+
+  img {
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .wa-chat-btn-icon-cta-big {
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+}
+

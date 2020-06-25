@@ -4,10 +4,12 @@ import ProductList from "../components/ProductList"
 import { IProduct } from "../components/Product"
 import Footer from "../components/Footer"
 import Contact from "../components/Contact"
+import ContactButton from '../components/ContactButton';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head'
 import Router from "next/router";
 import withGA from "next-ga";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "../styles.scss"
 
@@ -53,6 +55,7 @@ const Index = (props: IIndexProps) => {
                     <Contact />
                 </section>
             </main>
+            <ContactButton />
             <Footer />
         </div>
     )
