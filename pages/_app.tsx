@@ -64,10 +64,11 @@ const Index = (props: IIndexProps) => {
 Index.getInitialProps = async () => {
     return {
         products: [
-            {id: "faceMask_1", name: "El diseño que usted elija", price: 1500, image: "/products/faceMask_10.jpg", description: "Si tiene una idea, podemos ayudarle a plasmarla en una mascarilla."} as IProduct,
-            {id: "faceMask_3", name: "Para los más pequeños", price: 1500, image: "/products/faceMask_3.jpeg",description: "Diseños especiales para los más chicos del hogar."} as IProduct,
-            {id: "faceMask_5", name: "Para su negocio", price: 2500, image: "/products/faceMask_6.jpeg",description: "Confeccionamos a su gusto. Si necesita mascarillas con el logo del negocio, podemos ayudarle."} as IProduct,
-            {id: "faceMask_4", name: "Diferentes estilos", price: 2000, image: "/products/faceMask_4.jpeg",description: "Diseños sencillos y 3D para mejorar el confort, porque todos merecen estar protegidos y cómodos."} as IProduct,
+            {id: "faceMask_1", name: "El diseño que usted elija", price: 'Diseño clasico, liso, tematico o con su logo. Desde los ₡1500 en adelante.', image: "/products/entrehilos6.jpeg", description: "Si tiene una idea, podemos ayudarle a plasmarla en una mascarilla."} as IProduct,
+            {id: "faceMask_3", name: "Para los más pequeños", price: 'Desde los ₡1250 en adelante.', image: "/products/entrehilos3.jpg",description: "Diseños especiales para los más chicos del hogar."} as IProduct,
+            {id: "faceMask_5", name: "Para su negocio", price: 'Desde los ₡1500 en adelante.', image: "/products/entrehilos2.jpg",description: "Confeccionamos a su gusto. Si necesita mascarillas con el logo del negocio, podemos ayudarle."} as IProduct,
+            {id: "faceMask_4", name: "Diferentes estilos", price: 'Desde los ₡1500 en adelante.', image: "/products/entrehilos5.jpeg",description: "Diseños sencillos y 3D para mejorar el confort, porque todos merecen estar protegidos y cómodos."} as IProduct,
+            {id: "entrehilos4", name: "Bolsa de tela impermeable", price: 'Desde los ₡1000 en adelante.', image: "/products/entrehilos4.jpeg",description: "Bolsa de tela impermeable para sus mascarillas."} as IProduct,
         ]
     }
 }
