@@ -15,13 +15,18 @@ interface IProductProps {
 }
 
 const Product = (props: IProductProps) => {
+    const title = props.product['data']['title'][0]['text']
+    const description = props.product['data']['description'][0]['text']
+    const price = props.product['data']['price'][0]['text']
+    const picture = props.product['data']['picture']['url']
+
     return (
         <div className="product">
-            <h2 className="product__title">{props.product.name}</h2>
-            <p className="product__description">{props.product.description}</p>
-            <img src={props.product.image} alt="" className="product__image"/>
+            <h2 className="product__title">{title}</h2>
+            <p className="product__description">{description}</p>
+            <img src={picture} alt="" className="product__image"/>
             <div className="product__price-button-container">
-                <div className="product__price">{props.product.price}</div>
+                <div className="product__price">{price}</div>
             </div>
         </div>
     )

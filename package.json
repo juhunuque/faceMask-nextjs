@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "postbuild": "next-on-netlify",
     "start": "next start",
     "export": "next export"
   },
@@ -21,8 +22,11 @@
     "bootstrap": "^4.5.0",
     "next": "^9.4.4",
     "next-ga": "^2.3.4",
+    "next-on-netlify": "^2.6.3",
     "next-seo": "^4.5.0",
     "node-sass": "^4.14.1",
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",

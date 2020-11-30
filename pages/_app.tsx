@@ -10,11 +10,13 @@ import Head from 'next/head'
 import Router from "next/router";
 import withGA from "next-ga";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { client }  from './../prismic-configuration';
+import Prismic from 'prismic-javascript'
 
 import "../styles.scss"
 
 interface IIndexProps {
-    products: IProduct[]
+    products: any
 }
 
 const Index = (props: IIndexProps) => {
@@ -50,7 +52,7 @@ const Index = (props: IIndexProps) => {
                     <h2>Mascarillas</h2>
                     <p>Una <strong>exclusiva colección de mascarillas</strong> que siguen todos los lineamientos dados por el Ministerio de Salud.</p>
                 </div>
-                <ProductList products={props.products} />
+                <ProductList products={props.products.results} />
                 <section id="contact">
                     <Contact />
                 </section>
@@ -61,15 +63,14 @@ const Index = (props: IIndexProps) => {
     )
 }
 
-Index.getInitialProps = async () => {
+Index.getInitialProps = async (context) => {
+    const req = context.req
+    const products = await client(req).query(
+        [Prismic.Predicates.at('document.type', 'mask-type')],
+        { pageSize : 100 }
+    );
     return {
-        products: [
-            {id: "faceMask_1", name: "El diseño que usted elija", price: 'Diseño clasico, liso, tematico o con su logo. Desde los ₡1500 en adelante.', image: "/products/entrehilos6.jpeg", description: "Si tiene una idea, podemos ayudarle a plasmarla en una mascarilla."} as IProduct,
-            {id: "faceMask_3", name: "Para los más pequeños", price: 'Desde los ₡1250 en adelante.', image: "/products/entrehilos3.jpg",description: "Diseños especiales para los más chicos del hogar."} as IProduct,
-            {id: "faceMask_5", name: "Para su negocio", price: 'Desde los ₡2000 en adelante.', image: "/products/entrehilos2.jpg",description: "Confeccionamos a su gusto. Si necesita mascarillas con el logo del negocio, podemos ayudarle."} as IProduct,
-            {id: "faceMask_4", name: "Diferentes estilos", price: 'Desde los ₡2000 en adelante.', image: "/products/entrehilos5.jpeg",description: "Diseños sencillos y 3D para mejorar el confort, porque todos merecen estar protegidos y cómodos."} as IProduct,
-            {id: "entrehilos4", name: "Bolsa de tela impermeable", price: 'Desde los ₡1000 en adelante.', image: "/products/entrehilos4.jpeg",description: "Bolsa de tela impermeable para sus mascarillas."} as IProduct,
-        ]
+        products
     }
 }
 export default withGA(process.env.NEXT_PUBLIC_GA_ID, Router)(Index);
