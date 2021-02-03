@@ -15,9 +15,9 @@ interface IProductProps {
 }
 
 const Product = (props: IProductProps) => {
-    const title = props.product['data']['title'][0]['text']
-    const description = props.product['data']['description'][0]['text']
-    const price = props.product['data']['price'][0]['text']
+    const title = props.product['data']['title'].length ? props.product['data']['title'][0]['text'] : ''
+    const description = props.product['data']['description'].length ? props.product['data']['description'][0]['text'] : ''
+    const price = props.product['data']['price'].length ? props.product['data']['price'][0]['text'] : ''
     const picture = props.product['data']['picture']['url']
 
     return (
